@@ -2,6 +2,10 @@
 
 import Foundation
 
+/*:
+ Inheritance
+ */
+
 class SuperHero{
     let name: String
     let originalName: String
