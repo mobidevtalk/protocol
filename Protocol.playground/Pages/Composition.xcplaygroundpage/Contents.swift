@@ -83,4 +83,23 @@ class TheFlash: SuperHero{
     }
 }
 
-TheFlash().profile
+let flash = TheFlash()
+flash.profile
+
+/*:
+ Multiple Inheritance
+ */
+protocol SuperPower{
+    var power: String { get }
+}
+
+extension WonderWoman: SuperPower{
+    var power: String { return "Super strength" }
+}
+
+extension TheFlash: SuperPower{
+    var power: String { return "Fast running" }
+}
+
+wonderWoman.power
+flash.power
