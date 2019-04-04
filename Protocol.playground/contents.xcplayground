@@ -4,5 +4,6 @@
         <page name='Index'/>
         <page name='Inheritance'/>
         <page name='Composition'/>
+        <page name='Avengers'/>
     </pages>
 </playground>
