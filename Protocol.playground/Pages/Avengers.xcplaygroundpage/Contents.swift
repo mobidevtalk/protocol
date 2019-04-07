@@ -30,3 +30,48 @@ struct Thor: Avenger{
     var name = "Thor"
     var speciality = "God of Thunder ⚡️"
 }
+
+let initialTeam: [Avenger] = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
+initialTeam.forEach({ print($0.name) })
+
+initialTeam.forEach({print($0.name + ": " + $0.speciality)})
+
+/*:
+ Facilitating as needed
+ */
+protocol Defense: Avenger{
+    var defenseSystem: String { get }
+}
+
+extension IronMan: Defense{
+    var defenseSystem: String{
+        get{
+            return "The suite itself contains the defensive counter measure"
+        }
+    }
+}
+
+extension CaptainAmerica: Defense{
+    var defenseSystem: String{
+        get{
+            return "The shield is the main defense"
+        }
+    }
+}
+
+extension Thor: Defense{
+    var defenseSystem: String{
+        get{
+            return "The spinning Hammer is the defense"
+        }
+    }
+}
+
+let defenseHolder = initialTeam.compactMap { (avenger) -> Defense? in
+    if let defense = avenger as? Defense{
+        return defense
+    }
+    return nil
+}
+defenseHolder.forEach({ print($0.name + "'s Defense system is: " + $0.defenseSystem) })
+
