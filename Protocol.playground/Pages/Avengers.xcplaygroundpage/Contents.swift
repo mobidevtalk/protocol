@@ -11,25 +11,25 @@ protocol Avenger{
     var speciality: String {get}
 }
 
-struct IronMan: Avenger{
-    var name = "Iron Man"
-    var speciality = "Iron Man got the coolest gadgets. Techie and smart 😎"
-}
+    struct IronMan: Avenger{
+        var name = "Iron Man"
+        var speciality = "Iron Man got the coolest gadgets. Techie and smart 😎"
+    }
 
-struct CaptainAmerica: Avenger{
-    var name = "Captain America"
-    var speciality = "Super Human power. Quick to heal, tough to beat. 💪"
-}
+    struct CaptainAmerica: Avenger{
+        var name = "Captain America"
+        var speciality = "Super Human power. Quick to heal, tough to beat. 💪"
+    }
 
-struct Hulk: Avenger{
-    var name = "Hulk"
-    var speciality = "God like power. Good at smashing 🔥"
-}
+    struct Hulk: Avenger{
+        var name = "Hulk"
+        var speciality = "God like power. Good at smashing  🔥"
+    }
 
-struct Thor: Avenger{
-    var name = "Thor"
-    var speciality = "God of Thunder ⚡️"
-}
+    struct Thor: Avenger{
+        var name = "Thor"
+        var speciality = "God of Thunder ⚡️"
+    }
 
 let initialTeam: [Avenger] = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
 initialTeam.forEach({ print($0.name) })

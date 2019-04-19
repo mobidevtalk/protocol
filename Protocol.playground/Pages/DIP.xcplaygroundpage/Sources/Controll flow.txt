@@ -1,0 +1,19 @@
+title Controll flow
+
+note over App:@UIApplicationMain
+
+App->iOS:AppDelegate
+
+activate iOS
+App<-iOS:application-object
+activate App
+App<--iOS:application state observation
+App<--iOS:application life cycle observation
+deactivate App
+
+control event-loop
+iOS->event-loop:register App as event observer
+deactivate iOS
+
+
+event-loop-->App: events callback
