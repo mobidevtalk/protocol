@@ -1,18 +1,7 @@
-title Compile and Compile time dependency
+title Run time dependency of SimpleAvenger
 
-activate TeamAvenger
-TeamAvenger->IronMan:ironMan,\ninstance variable
-TeamAvenger->CaptainAmerica:captainAmerica,\ninstance variable
-TeamAvenger->Hulk:hulk, instance variable
-TeamAvenger->Thor:thor, instance variable
-
-IronMan->Avenger:protocol confirmation
-activate Avenger
-CaptainAmerica->Avenger:protocol confirmation
-Hulk->Avenger:protocol\nconfirmation
-Thor->Avenger:protocol\nconfirmation
-TeamAvenger->Avenger:initialTeam, instance variable
-deactivate Avenger
-
-TeamAvenger->Team:inheritance
-deactivate TeamAvenger
+activate SimpleAvenger
+SimpleAvenger->IronMan:
+SimpleAvenger->CaptainAmerica:
+SimpleAvenger->Hulk:
+SimpleAvenger->Thor:
