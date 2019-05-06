@@ -3,20 +3,17 @@
 import Foundation
 
 /*:
- Compile time dependency
+ The definition of Avergers is available on the DIP/Sources/AvengersLib.swift
+ */
+
+/*:
+ Case study of same dependency on run and compile time
  */
 
 class Team{
     func introduction(){fatalError("Subclass should implement")}
 }
 
-/*:
- Run time dependency
- */
-
-/*:
- The definition of Avergers is available on the DIP/Sources/AvengersLib.swift
- */
 class TeamAvenger: Team{
     private let initialTeam: [Avenger]
     
@@ -44,7 +41,7 @@ team.introduction()
 
 
 /*:
- Source code dependency
+ Case study of different dependency on run and compile time
  */
 class SimpleAvenger: Team{
     private let initialTeam: [Avenger]
