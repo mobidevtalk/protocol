@@ -10,42 +10,57 @@ class Team{
     func introduction(){fatalError("Subclass should implement")}
 }
 
-protocol Avenger{
-    var name: String {get}
-    var speciality: String {get}
-}
+/*:
+ Run time dependency
+ */
 
-struct IronMan: Avenger{
-    var name = "Iron Man"
-    var speciality = "Iron Man got the coolest gadgets. Techie and smart 😎"
-}
-
-struct CaptainAmerica: Avenger{
-    var name = "Captain America"
-    var speciality = "Super Human power. Quick to heal, tough to beat. 💪"
-}
-
-struct Hulk: Avenger{
-    var name = "Hulk"
-    var speciality = "God like power. Good at smashing  🔥"
-}
-
-struct Thor: Avenger{
-    var name = "Thor"
-    var speciality = "God of Thunder ⚡️"
-}
-
+/*:
+ The definition of Avergers is available on the DIP/Sources/AvengersLib.swift
+ */
 class TeamAvenger: Team{
-    private let initialTeam: [Avenger] = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
+    private let initialTeam: [Avenger]
+    
+    private let ironMan: IronMan
+    private let captainAmerica: CaptainAmerica
+    private let hulk: Hulk
+    private let thor: Thor
+    
+    override init() {
+        ironMan = IronMan()
+        captainAmerica = CaptainAmerica()
+        hulk = Hulk()
+        thor = Thor()
+         
+        initialTeam = [ironMan, captainAmerica, hulk, thor]
+    }
     
     override func introduction() {
         initialTeam.forEach({print($0.name + ": " + $0.speciality)})
     }
 }
 
-
 let team = TeamAvenger()
 team.introduction()
+
+
+/*:
+ Source code dependency
+ */
+class SimpleAvenger: Team{
+    private let initialTeam: [Avenger]
+    
+    override init() {
+        initialTeam = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
+    }
+    
+    override func introduction() {
+        initialTeam.forEach({print($0.name + ": " + $0.speciality)})
+    }
+}
+
+let simpleTeam = SimpleAvenger()
+simpleTeam.introduction()
+
 
 
 
