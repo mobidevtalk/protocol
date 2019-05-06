@@ -1,16 +1,6 @@
-title Source Code dependency
+title Source Code dependency of SimpleAvenger
 
-SimpleAvenger->Team:
+SimpleAvenger->Team: Inheritance
 activate SimpleAvenger
-SimpleAvenger->>Avenger:
+SimpleAvenger->>Avenger:                initialTeam, instance variable
 deactivate SimpleAvenger
-
-
-IronMan->Avenger:
-activate Avenger
-CaptainAmerica->Avenger:
-Hulk->Avenger:
-Thor->Avenger:
-deactivate Avenger
-
-
