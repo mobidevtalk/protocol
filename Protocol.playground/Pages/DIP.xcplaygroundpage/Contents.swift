@@ -58,16 +58,3 @@ class SimpleAvenger: Team{
 let simpleTeam = SimpleAvenger()
 simpleTeam.introduction()
 
-
-
-
-enum Position: String{
-    case Ground
-    case Top
-    case Air
-    case Jump
-}
-
-enum Action: String{
-    case Punch
-}
