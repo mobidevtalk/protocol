@@ -1,0 +1,3 @@
+//: [Index](Index)
+
+import Foundation
