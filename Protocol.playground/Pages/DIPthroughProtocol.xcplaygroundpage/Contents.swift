@@ -63,7 +63,7 @@ class WonderWoman: SuperHero{
     }
     
     override func speciality() -> String {
-        return "Come on, she is a Demigoddess"
+        return "Come on, she is a Demigoddess 🦸‍♀️"
     }
 }
 
@@ -115,7 +115,7 @@ struct CaptainAmerica: Avenger{
 
 struct Hulk: Avenger{
     var name = "Hulk"
-    var speciality = "God like power. Good at smashing  🔥"
+    var speciality = "God like power. Good at smashing 🔥"
 }
 
 struct Thor: Avenger{
@@ -139,7 +139,7 @@ extension IronMan: Profilable{
 
 extension CaptainAmerica: Profilable{
     var infos: BasicInfo {
-        return BasicInfo(fullName: " Steve Rogers aka: \(name)", gender: .Male)
+        return BasicInfo(fullName: "Steve Rogers aka: \(name)", gender: .Male)
     }
     
     var Species: Species {
@@ -180,7 +180,7 @@ extension Thor: Profilable{
 }
 
 
-// MARK: - Profilable 
+// MARK: - Profilable
 struct ProfileScene{
     let justiceLeague: [Profilable] = [Batman(), WonderWoman()]
     let avengers: [Profilable] = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
