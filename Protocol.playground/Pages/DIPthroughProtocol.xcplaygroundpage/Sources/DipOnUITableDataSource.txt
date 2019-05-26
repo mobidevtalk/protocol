@@ -1,0 +1,14 @@
+title Dependency Inversion principle through UITableViewDataSource
+
+note over Code base#gray: Higher level logic
+note over UITableViewDataSource#gray : Abstraction
+note over UIKit#gray: Lower level details
+
+Code base->UITableViewDataSource:set as delegate
+activate UITableViewDataSource
+Code base<--UITableViewDataSource:Implement the required methods
+
+UITableViewDataSource<-UIKit: get the higher level logic
+deactivate UITableViewDataSource
+
+UIKit->UIScreen: Draw the Tabel View
