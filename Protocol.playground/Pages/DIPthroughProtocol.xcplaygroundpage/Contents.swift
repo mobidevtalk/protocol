@@ -2,21 +2,7 @@
 
 import Foundation
 
-struct SimpleCharacter{
-    let name = "Jon"
-    let power = "Have no specific power"
-}
-
-struct Info{
-    func printInfo(character: SimpleCharacter) -> String {
-        return "Name: " + character.name + " Power: " + character.power
-    }
-}
-
-let info = Info()
-info.printInfo(character: SimpleCharacter())
-
-
+// MARK: - Profilable model
 struct BasicInfo{
     enum Gender: String {
         case Male
@@ -193,6 +179,8 @@ extension Thor: Profilable{
     }
 }
 
+
+// MARK: - Profilable 
 struct ProfileScene{
     let justiceLeague: [Profilable] = [Batman(), WonderWoman()]
     let avengers: [Profilable] = [IronMan(), CaptainAmerica(), Hulk(), Thor()]
