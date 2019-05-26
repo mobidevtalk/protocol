@@ -147,7 +147,7 @@ extension CaptainAmerica: Profilable{
     }
     
     func remarks() -> String {
-        return "True born leder. \(speciality)"
+        return "True born leader. \(speciality)"
     }
 }
 
