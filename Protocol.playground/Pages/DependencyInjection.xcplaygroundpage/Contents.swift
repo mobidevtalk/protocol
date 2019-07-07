@@ -15,20 +15,20 @@ SuperHero(superPower: "Speed")
 enum Scale: String{
     case noob = "Below basic"
     case basic = "Basic"
-    case intermediate = "Skillfull"
-    case advance = "Very skilfull"
-    case superAdvance = "Super Skillfull"
+    case intermediate = "Skillful"
+    case advance = "Very Skillful"
+    case superAdvance = "Super Skillful"
 }
 
 enum Capability: CustomStringConvertible{
-    case streanth(Scale)
+    case strength(Scale)
     case speed(Scale)
     case fly(Scale)
     
     var description: String{
         switch self {
-        case .streanth(let scale):
-            return "\(scale.rawValue) level of Streanth"
+        case .strength(let scale):
+            return "\(scale.rawValue) level of Strength"
         case .speed(let scale):
             return "\(scale.rawValue) level of Speed"
         case .fly(let scale):
@@ -45,7 +45,7 @@ protocol Recruiter{
 struct IronMan{
     private let name = "Tony Stark"
     private let aka = "Iron Man"
-    private let capabilities: [Capability] = [.streanth(.advance), .fly(.superAdvance)]
+    private let capabilities: [Capability] = [.strength(.advance), .fly(.superAdvance)]
     
     let recruiter: Recruiter
     
@@ -53,8 +53,8 @@ struct IronMan{
         recruiter.submitInfo(name: name, superHeroName: aka, capabilities: capabilities)
     }
     
-    func resume(){
-        print(recruiter.formattedInfo() ?? "")
+    func resume() -> String{
+        return recruiter.formattedInfo() ?? ""
     }
 }
 
@@ -62,7 +62,7 @@ class Agent: Recruiter{
     private var resume: String?
     
     func submitInfo(name: String, superHeroName: String, capabilities: [Capability]) {
-        let capabilityString = capabilities.reduce(into: "Capabilities:", { $0 = "\n" + $1.description })
+        let capabilityString = capabilities.reduce(into: "Capabilities includes:", { $0 += " " + $1.description + "," })
         resume = "Name: \(name)\nAKA: \(superHeroName)\n\(capabilityString)"
     }
     
@@ -71,16 +71,19 @@ class Agent: Recruiter{
     }
 }
 
+let ironManThroughAgent = IronMan(recruiter : Agent())
+ironManThroughAgent.submitResume()
+print(ironManThroughAgent.resume())
 
 class Agency: Recruiter{
     private var resume: String?
     
     func submitInfo(name: String, superHeroName: String, capabilities: [Capability]) {
-        let splitedName = name.split(separator: " ")
+        let splittedName = name.split(separator: " ")
 
-        let fullName = "First name: " + (splitedName.first ?? "") + (splitedName.count > 1 ? "\(splitedName.dropFirst(1).reduce(into: "\nLast name", { $0 += " " + $1 }))" : "")
+        let fullName = "First name: " + (splittedName.first ?? "") + (splittedName.count > 1 ? "\(splittedName.dropFirst(1).reduce(into: "\nLast name", { $0 += " " + $1 }))" : "")
         
-        let capabilityString = capabilities.reduce(into: "\nCapabilities:", { $0 += "\n" + $1.description })
+        let capabilityString = capabilities.reduce(into: "Capabilities:", { $0 += "\n" + $1.description })
         
         resume = "Commonly Know as: \(superHeroName)\n\(fullName)\n\(capabilityString)"
     }
@@ -90,8 +93,8 @@ class Agency: Recruiter{
     }
 }
 
-let agency = Agency()
+print("\n")
 
-let ironMan = IronMan(recruiter : agency)
-ironMan.submitResume()
-ironMan.resume()
+let ironManThroughAgency = IronMan(recruiter : Agency())
+ironManThroughAgency.submitResume()
+print(ironManThroughAgency.resume())
