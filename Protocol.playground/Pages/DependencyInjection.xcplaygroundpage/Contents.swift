@@ -1,5 +1,11 @@
 //: [Index](Index)
 
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Dependency Injection in Swift](https://mobidevtalk.com/swift-dependency-injection-through-protocol/)
+ */
+
 struct SuperHero{
     var superPower: String?
 }

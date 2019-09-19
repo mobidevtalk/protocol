@@ -1,7 +1,10 @@
 //: [Index](Index)
-
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Protocol, Swift way of thinking](https://mobidevtalk.com/protocol-swift-practical-use-case/)
+ */
 import Foundation
-
 /*:
  A case study of Avengers
  */

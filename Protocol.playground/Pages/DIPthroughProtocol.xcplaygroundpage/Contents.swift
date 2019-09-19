@@ -1,5 +1,9 @@
 //: [Index](Index)
-
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Swift Dependency Inversion through Protocol](https://mobidevtalk.com/swift-dependency-inversion-through-protocol/)
+ */
 import Foundation
 
 // MARK: - Profilable model

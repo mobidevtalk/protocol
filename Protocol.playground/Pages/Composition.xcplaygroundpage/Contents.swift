@@ -1,7 +1,10 @@
 //: [Index](Index)
-
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Composition, breaker of chains](https://mobidevtalk.com/composition-breaker-of-chains/)
+ */
 import Foundation
-
 /*:
  Composition
  */

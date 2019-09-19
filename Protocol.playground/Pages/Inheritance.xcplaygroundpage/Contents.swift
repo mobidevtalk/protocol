@@ -1,7 +1,10 @@
 //: [Index](Index)
-
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Inheritance, Initiator of coupling](https://mobidevtalk.com/inheritance-initiator-of-coupling/)
+ */
 import Foundation
-
 /*:
  Inheritance
  */

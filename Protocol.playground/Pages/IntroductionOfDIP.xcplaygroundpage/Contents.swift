@@ -1,11 +1,13 @@
 //: [Index](Index)
-
+/*:
+ [Swift Protocol Hub](https://mobidevtalk.com/swift-protocol-hub/)
+ 
+ [Introduction of Dependency Inversion on Swift](https://mobidevtalk.com/introduction-of-dependency-inversion-on-swift/)
+ */
 import Foundation
-
 /*:
  The definition of Avergers is available on the DIP/Sources/AvengersLib.swift
  */
-
 /*:
  Case study of same dependency on run and compile time
  */
